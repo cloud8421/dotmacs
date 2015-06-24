@@ -55,9 +55,10 @@
 (setq make-backup-files nil)
 
 ;; fonts
-(add-to-list 'default-frame-alist '(font . "Source Code Pro-12"))
-(set-face-attribute 'default nil :font  "Source Code Pro-12" )
-(set-frame-font   "Source Code Pro-12" nil t)
+(defvar ui-font "Source Code Pro-12")
+(add-to-list 'default-frame-alist '(font . ui-font))
+(set-face-attribute 'default nil :font  ui-font)
+(set-frame-font ui-font nil t)
 
 ;; theme
 (load-theme 'wombat)
