@@ -55,6 +55,9 @@
 ;; disable backups
 (setq make-backup-files nil)
 
+;; Pound sign
+(global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#"))) 
+
 ;; fonts
 (defvar ui-font "Source Code Pro-12")
 (add-to-list 'default-frame-alist '(font . ui-font))
