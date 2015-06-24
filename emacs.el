@@ -51,6 +51,9 @@
 ;; hook projectile
 (projectile-global-mode)
 
+;; disable backups
+(setq make-backup-files nil)
+
 ;; fonts
 (add-to-list 'default-frame-alist '(font . "Source Code Pro-12"))
 (set-face-attribute 'default nil :font  "Source Code Pro-12" )
