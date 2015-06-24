@@ -15,6 +15,7 @@
 		      powerline
 		      powerline-evil
 		      js2-mode
+		      auto-complete
 		      helm))
 
 ;; figure out what's missing
@@ -55,6 +56,9 @@
 ;; hook projectile
 (projectile-global-mode)
 
+;; Hook autocomplete
+(global-auto-complete-mode t)
+
 ;; disable backup and autosave
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -77,6 +81,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(ac-auto-show-menu t)
+ '(ac-auto-start t)
+ '(ac-show-menu-immediately-on-auto-complete t)
  '(custom-safe-themes
    (quote
     ("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default))))
