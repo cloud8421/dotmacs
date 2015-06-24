@@ -52,8 +52,9 @@
 ;; hook projectile
 (projectile-global-mode)
 
-;; disable backups
+;; disable backup and autosave
 (setq make-backup-files nil)
+(setq auto-save-default nil)
 
 ;; Pound sign
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#"))) 
