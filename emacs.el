@@ -12,6 +12,7 @@
 		      evil-surround
 		      projectile
 		      molokai
+		      js2-mode
 		      helm))
 
 ;; figure out what's missing
