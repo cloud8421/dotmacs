@@ -71,7 +71,7 @@
 
 ;; Leader shortcuts
 (evil-leader/set-key
-  "1" 'helm-mini ;; find files
+  "1" 'projectile-find-file ;; find files
   "2" 'projectile-switch-project
   "i" 'package-install
   "b" 'eval-buffer ;; lisp eval entire buffer
