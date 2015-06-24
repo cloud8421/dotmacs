@@ -61,6 +61,9 @@
 
 ;; Leader shortcuts
 (evil-leader/set-key
-  "1" 'find-file
+  "1" 'helm-mini
+  "2" 'projectile-switch-project
   "i" 'package-install
-  "e" 'eval-buffer)
+  "b" 'eval-buffer
+  "m" 'helm-M-x
+  "/" 'helm-find-files)
