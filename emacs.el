@@ -15,6 +15,7 @@
 		      powerline
 		      powerline-evil
 		      js2-mode
+		      elixir-mode
 		      auto-complete
 		      helm))
 
