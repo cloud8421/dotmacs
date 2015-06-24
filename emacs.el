@@ -64,7 +64,7 @@
 (setq auto-save-default nil)
 
 ;; Pound sign
-(global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#"))) 
+(global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#")))
 
 ;; Leader shortcuts
 (evil-leader/set-key
