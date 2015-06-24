@@ -17,6 +17,7 @@
 		      js2-mode
 		      elixir-mode
 		      company
+		      magit
 		      helm))
 
 ;; figure out what's missing
@@ -60,6 +61,9 @@
 ;; Hook autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; Last magit version
+(setq magit-last-seen-setup-instructions "1.4.0")
+
 ;; disable backup and autosave
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -77,7 +81,8 @@
   "m" 'helm-M-x ;; better replacement for M-x
   "w" 'whitespace-mode ;; toggles whitespace mode
   "s" 'helm-mini ;; switch between buffers
-  "/" 'helm-find-files) ;; generic file finder
+  "/" 'helm-find-files ;; generic file finder
+  "g" 'magit-status) 
 
 ;; Javascript
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
