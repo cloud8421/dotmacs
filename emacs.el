@@ -16,7 +16,7 @@
 		      powerline-evil
 		      js2-mode
 		      elixir-mode
-		      auto-complete
+		      company
 		      helm))
 
 ;; figure out what's missing
@@ -58,7 +58,7 @@
 (projectile-global-mode)
 
 ;; Hook autocomplete
-(global-auto-complete-mode t)
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;; disable backup and autosave
 (setq make-backup-files nil)
@@ -88,9 +88,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ac-auto-show-menu t)
- '(ac-auto-start t)
- '(ac-show-menu-immediately-on-auto-complete t)
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  '(custom-safe-themes
