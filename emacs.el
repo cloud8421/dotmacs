@@ -11,7 +11,9 @@
 		      evil-leader
 		      evil-surround
 		      projectile
-		      molokai
+		      monokai-theme
+		      powerline
+		      powerline-evil
 		      js2-mode
 		      helm))
 
@@ -60,15 +62,6 @@
 ;; Pound sign
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#"))) 
 
-;; fonts
-(defvar ui-font "Source Code Pro-12")
-(add-to-list 'default-frame-alist '(font . ui-font))
-(set-face-attribute 'default nil :font  ui-font)
-(set-frame-font ui-font nil t)
-
-;; theme
-(load-theme 'monokai)
-
 ;; Leader shortcuts
 (evil-leader/set-key
   "1" 'projectile-find-file ;; find files
@@ -94,3 +87,15 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; fonts
+(defvar ui-font "Source Code Pro-12")
+(add-to-list 'default-frame-alist '(font . "Source Code Pro-12"))
+(set-frame-font "Source Code Pro-12" nil t)
+
+;; ui
+(tool-bar-mode -1)
+(powerline-evil-vim-color-theme)
+
+;; theme
+(load-theme 'monokai)
