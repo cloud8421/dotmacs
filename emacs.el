@@ -66,12 +66,14 @@
 
 ;; Leader shortcuts
 (evil-leader/set-key
-  "1" 'helm-mini
+  "1" 'helm-mini ;; find files
   "2" 'projectile-switch-project
   "i" 'package-install
-  "b" 'eval-buffer
-  "m" 'helm-M-x
-  "/" 'helm-find-files)
+  "b" 'eval-buffer ;; lisp eval entire buffer
+  "e" 'eval-last-sexp ;; eval expression under cursor
+  "m" 'helm-M-x ;; better replacement for M-x
+  "/" 'helm-find-files) ;; generic file finder
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
