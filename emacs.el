@@ -74,6 +74,8 @@
   "b" 'eval-buffer ;; lisp eval entire buffer
   "e" 'eval-last-sexp ;; eval expression under cursor
   "m" 'helm-M-x ;; better replacement for M-x
+  "w" 'whitespace-mode ;; toggles whitespace mode
+  "s" 'helm-mini ;; switch between buffers
   "/" 'helm-find-files) ;; generic file finder
 
 ;; Javascript
