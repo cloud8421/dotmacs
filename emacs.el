@@ -107,6 +107,7 @@
 (set-frame-font "Source Code Pro-12" nil t)
 
 ;; ui
+(setq initial-frame-alist '((top . 0) (left . 0) (width . 140) (height . 40)))
 (tool-bar-mode -1)
 (powerline-evil-vim-color-theme)
 
