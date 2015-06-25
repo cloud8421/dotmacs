@@ -16,6 +16,7 @@
 		      powerline-evil
 		      js2-mode
 		      elixir-mode
+		      elm-mode
 		      company
 		      magit
 		      helm))
@@ -68,6 +69,9 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
+;; Disable electric mode
+(electric-indent-mode -1)
+
 ;; Pound sign
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#")))
 
@@ -96,6 +100,7 @@
  '(custom-safe-themes
    (quote
     ("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default)))
+ '(elm-indent-offset 2)
  '(inhibit-startup-screen t)
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t))
