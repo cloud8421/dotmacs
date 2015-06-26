@@ -67,6 +67,7 @@
 
 ;; Hook autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
+(setq company-dabbrev-downcase nil)
 
 ;; Last magit version
 (setq magit-last-seen-setup-instructions "1.4.0")
