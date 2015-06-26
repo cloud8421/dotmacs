@@ -10,6 +10,7 @@
 (defvar my-packages '(evil
 		      evil-leader
 		      evil-surround
+                      evil-nerd-commenter
 		      projectile
 		      monokai-theme
 		      powerline
@@ -86,6 +87,7 @@
   "w" 'whitespace-mode ;; toggles whitespace mode
   "s" 'helm-mini ;; switch between buffers
   "/" 'helm-find-files ;; generic file finder
+  "c" 'evilnc-comment-or-uncomment-lines
   "g" 'magit-status) 
 
 ;; Javascript
