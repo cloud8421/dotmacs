@@ -20,6 +20,8 @@
 		      elm-mode
 		      company
 		      magit
+		      cider
+		      nrepl-eval-sexp-fu
                       exec-path-from-shell
 		      helm))
 
@@ -111,7 +113,9 @@
  '(elm-indent-offset 2)
  '(inhibit-startup-screen t)
  '(js2-basic-offset 2)
- '(js2-bounce-indent-p t))
+ '(js2-bounce-indent-p t)
+ '(nrepl-hide-special-buffers t)
+ '(nrepl-popup-stacktraces-in-repl t))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -119,6 +123,16 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;; lisp
+(defun standard-lisp-modes ()
+  (require 'nrepl-eval-sexp-fu)
+  (local-set-key (kbd "RET") 'newline-and-indent))
+
+;;; Emacs Lisp
+(add-hook 'emacs-lisp-mode-hook
+	  '(lambda ()
+	     (standard-lisp-modes)))
 
 ;; fonts
 (defvar ui-font "Source Code Pro-12")
