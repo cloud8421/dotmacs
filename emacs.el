@@ -20,6 +20,7 @@
 		      elm-mode
 		      company
 		      magit
+                      exec-path-from-shell
 		      helm))
 
 ;; figure out what's missing
@@ -46,6 +47,10 @@
           (delete-window compile-window))))))
 
 (ensure-my-packages)
+
+;; hook $PATH
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 ;; start evil mode
 (global-evil-leader-mode)
