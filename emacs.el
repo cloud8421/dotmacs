@@ -10,7 +10,7 @@
 (defvar my-packages '(evil
 		      evil-leader
 		      evil-surround
-                      evil-nerd-commenter
+		      evil-nerd-commenter
 		      projectile
 		      monokai-theme
 		      powerline
@@ -22,15 +22,16 @@
 		      magit
 		      cider
 		      nrepl-eval-sexp-fu
-                      exec-path-from-shell
-		      helm))
+		      exec-path-from-shell
+		      helm
+		      helm-ag))
 
 ;; figure out what's missing
 (defun my-missing-packages ()
   (let (missing-packages)
     (dolist (package my-packages (reverse missing-packages))
       (or (package-installed-p package)
-          (push package missing-packages)))))
+	  (push package missing-packages)))))
 
 ;; make sure that everything's installed
 (defun ensure-my-packages ()
@@ -97,6 +98,8 @@
   "/" 'helm-find-files ;; generic file finder
   "c" 'evilnc-comment-or-uncomment-lines
   "g" 'magit-status) 
+
+(evil-leader/set-key-for-mode 'clojure-mode "e" 'cider-pprint-eval-defun-at-point)
 
 ;; Javascript
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
