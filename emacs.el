@@ -16,9 +16,10 @@
 		      powerline
 		      powerline-evil
 		      js2-mode
-		      elixir-mode
 		      elm-mode
 		      company
+		      elixir-mode
+		      alchemist
 		      magit
 		      cider
 		      nrepl-eval-sexp-fu
@@ -70,7 +71,8 @@
 
 ;; Hook autocomplete
 (add-hook 'after-init-hook 'global-company-mode)
-(setq company-dabbrev-downcase nil)
+(setq company-dabbrev-downcase nil
+      company-idle-delay 0)
 
 ;; Last magit version
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -132,10 +134,14 @@
   (require 'nrepl-eval-sexp-fu)
   (local-set-key (kbd "RET") 'newline-and-indent))
 
-;;; Emacs Lisp
+;; Emacs Lisp
 (add-hook 'emacs-lisp-mode-hook
 	  '(lambda ()
 	     (standard-lisp-modes)))
+
+;; Elixir
+(require 'elixir-mode)
+(require 'alchemist)
 
 ;; fonts
 (defvar ui-font "Source Code Pro-12")
