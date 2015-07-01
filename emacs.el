@@ -86,6 +86,10 @@
 
 ;; Remove trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; Soft tabs
+(setq-default indent-tabs-mode nil)
+
 ;; Pound sign
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#")))
 
