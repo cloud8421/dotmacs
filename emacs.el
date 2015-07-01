@@ -84,6 +84,8 @@
 ;; Disable electric mode
 (electric-indent-mode -1)
 
+;; Remove trailing whitespace before save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 ;; Pound sign
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#")))
 
