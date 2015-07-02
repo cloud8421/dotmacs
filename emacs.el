@@ -178,5 +178,8 @@
 (powerline-evil-vim-color-theme)
 (global-linum-mode)
 
+(setq battery-mode-line-format "%t")
+(display-battery-mode)
+
 ;; theme
 (load-theme 'gruvbox)
