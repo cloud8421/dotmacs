@@ -8,33 +8,38 @@
 
 ;; add dependencies
 (defvar my-packages '(evil
-		      evil-leader
-		      evil-surround
-		      evil-nerd-commenter
-		      evil-tabs
-		      projectile
-		      monokai-theme
-		      gruvbox-theme
-		      powerline
-		      powerline-evil
-		      js2-mode
-		      elm-mode
-		      company
-		      elixir-mode
-		      alchemist
-		      magit
-		      cider
-		      nrepl-eval-sexp-fu
-		      exec-path-from-shell
-		      helm
-		      helm-ag))
+                      evil-leader
+                      evil-surround
+                      evil-nerd-commenter
+                      evil-tabs
+                      evil-paredit
+                      projectile
+                      monokai-theme
+                      gruvbox-theme
+                      powerline
+                      powerline-evil
+                      js2-mode
+                      elm-mode
+                      company
+                      elixir-mode
+                      alchemist
+                      magit
+                      cider
+                      nrepl-eval-sexp-fu
+                      exec-path-from-shell
+                      rainbow-delimiters
+                      highlight
+                      paredit
+                      smartparens
+                      helm
+                      helm-ag))
 
 ;; figure out what's missing
 (defun my-missing-packages ()
   (let (missing-packages)
     (dolist (package my-packages (reverse missing-packages))
       (or (package-installed-p package)
-	  (push package missing-packages)))))
+          (push package missing-packages)))))
 
 ;; make sure that everything's installed
 (defun ensure-my-packages ()
@@ -50,7 +55,7 @@
       ;; Close the compilation log.
       (let ((compile-window (get-buffer-window "*Compile-Log*")))
         (if compile-window
-          (delete-window compile-window))))))
+            (delete-window compile-window))))))
 
 (ensure-my-packages)
 
@@ -164,16 +169,32 @@
 ;; lisp
 (defun standard-lisp-modes ()
   (require 'nrepl-eval-sexp-fu)
+  (rainbow-delimiters-mode t)
+  (require 'evil-paredit)
+  (paredit-mode t)
+  (evil-paredit-mode t)
   (local-set-key (kbd "RET") 'newline-and-indent))
 
 ;; Emacs Lisp
 (add-hook 'emacs-lisp-mode-hook
-	  '(lambda ()
-	     (standard-lisp-modes)))
+          '(lambda ()
+             (standard-lisp-modes)))
 
 ;; Elixir
 (require 'elixir-mode)
 (require 'alchemist)
+
+;; Clojure
+(add-hook 'clojure-mode-hook
+          '(lambda ()
+             (standard-lisp-modes)
+
+             (mapc '(lambda (char)
+                      (modify-syntax-entry char "w" clojure-mode-syntax-table))
+                   '(?- ?_ ?/ ?< ?> ?: ?' ?.))
+             (require 'cider-test)
+
+             (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)))
 
 ;; fonts
 (defvar ui-font "Source Code Pro-12")
