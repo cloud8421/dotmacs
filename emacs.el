@@ -30,6 +30,7 @@
                       rainbow-delimiters
                       highlight
                       paredit
+                      recentf
                       smartparens
                       helm
                       helm-ag))
@@ -149,7 +150,8 @@
  '(js2-basic-offset 2)
  '(js2-bounce-indent-p t)
  '(nrepl-hide-special-buffers t)
- '(nrepl-popup-stacktraces-in-repl t))
+ '(nrepl-popup-stacktraces-in-repl t)
+ '(recentf-max-saved-items 50))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
@@ -206,6 +208,7 @@
 (tool-bar-mode -1)
 (powerline-evil-vim-color-theme)
 (global-linum-mode)
+(recentf-mode t)
 
 (setq battery-mode-line-format "%t")
 (display-battery-mode)
