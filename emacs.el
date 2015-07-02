@@ -74,8 +74,8 @@
 (setq company-dabbrev-downcase nil
       company-idle-delay 0)
 
-;; Last magit version
-(setq magit-last-seen-setup-instructions "1.4.0")
+;; Disable evil with magit
+(add-hook 'magit-mode-hook 'turn-off-evil-mode)
 
 ;; disable backup and autosave
 (setq make-backup-files nil)
