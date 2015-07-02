@@ -76,6 +76,7 @@
 
 ;; Disable evil with magit
 (add-hook 'magit-mode-hook 'turn-off-evil-mode)
+(add-hook 'magit-popup-mode-hook 'turn-off-evil-mode)
 
 ;; disable backup and autosave
 (setq make-backup-files nil)
