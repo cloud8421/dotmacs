@@ -94,6 +94,9 @@
 ;; Remove trailing whitespace before save
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
+;; Show matching parentheses
+(show-paren-mode)
+
 ;; Soft tabs
 (setq-default indent-tabs-mode nil)
 
