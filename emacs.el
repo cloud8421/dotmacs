@@ -105,9 +105,17 @@
   "s" 'helm-mini ;; switch between buffers
   "/" 'helm-find-files ;; generic file finder
   "c" 'evilnc-comment-or-uncomment-lines
-  "g" 'magit-status) 
+  "g" 'magit-status)
 
-(evil-leader/set-key-for-mode 'clojure-mode "e" 'cider-pprint-eval-defun-at-point)
+(evil-leader/set-key-for-mode 'clojure-mode "e" 'cider-eval-last-sexp)
+
+(defadvice cider-last-sexp (around evil activate)
+  "In normal-state or motion-state, last sexp ends at point."
+  (if (or (evil-normal-state-p) (evil-motion-state-p))
+      (save-excursion
+        (unless (or (eobp) (eolp)) (forward-char))
+        ad-do-it)
+    ad-do-it))
 
 ;; Javascript
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
