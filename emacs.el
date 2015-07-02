@@ -11,8 +11,10 @@
 		      evil-leader
 		      evil-surround
 		      evil-nerd-commenter
+		      evil-tabs
 		      projectile
 		      monokai-theme
+		      gruvbox-theme
 		      powerline
 		      powerline-evil
 		      js2-mode
@@ -61,6 +63,7 @@
 (evil-leader/set-leader ",")
 (evil-mode t)
 (global-evil-surround-mode 1)
+(global-evil-tabs-mode t)
 
 ;; hook helm, so that it's used everywhere
 (helm-mode t)
@@ -77,6 +80,9 @@
 ;; Disable evil with magit
 (add-hook 'magit-mode-hook 'turn-off-evil-mode)
 (add-hook 'magit-popup-mode-hook 'turn-off-evil-mode)
+
+;; Disable evil with sql
+(add-hook 'sql-mode 'turn-off-evil-mode)
 
 ;; disable backup and autosave
 (setq make-backup-files nil)
@@ -129,7 +135,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default)))
+    ("52706f54fd3e769a0895d1786796450081b994378901d9c3fb032d3094788337" "05c3bc4eb1219953a4f182e10de1f7466d28987f48d647c01f1f0037ff35ab9a" default)))
  '(elm-indent-offset 2)
  '(inhibit-startup-screen t)
  '(js2-basic-offset 2)
@@ -170,4 +176,4 @@
 (global-linum-mode)
 
 ;; theme
-(load-theme 'monokai)
+(load-theme 'gruvbox)
