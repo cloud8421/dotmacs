@@ -198,7 +198,6 @@
 (tool-bar-mode -1)
 (powerline-evil-vim-color-theme)
 (global-linum-mode)
-(recentf-mode t)
 
 ;; battery
 (setq battery-mode-line-format "%t")
