@@ -7,33 +7,23 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://melpa-stable.milkbox.net/packages/"))
 
 ;; add dependencies
-(defvar my-packages '(evil
-                      evil-leader
-                      evil-surround
-                      evil-nerd-commenter
-                      evil-tabs
-                      evil-paredit
+(defvar my-packages '(evil evil-leader
+                      evil-surround evil-nerd-commenter
+                      evil-tabs evil-paredit
                       projectile
-                      monokai-theme
-                      gruvbox-theme
-                      powerline
-                      powerline-evil
+                      monokai-theme gruvbox-theme
+                      powerline powerline-evil
                       js2-mode
                       elm-mode
                       company
-                      elixir-mode
-                      alchemist
+                      elixir-mode alchemist
                       magit
-                      cider
-                      nrepl-eval-sexp-fu
+                      cider nrepl-eval-sexp-fu
                       exec-path-from-shell
-                      rainbow-delimiters
-                      highlight
-                      paredit
+                      rainbow-delimiters highlight
+                      paredit smartparens
                       recentf
-                      smartparens
-                      helm
-                      helm-ag))
+                      helm helm-ag))
 
 ;; figure out what's missing
 (defun my-missing-packages ()
@@ -210,6 +200,7 @@
 (global-linum-mode)
 (recentf-mode t)
 
+;; battery
 (setq battery-mode-line-format "%t")
 (display-battery-mode)
 
