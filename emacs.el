@@ -23,6 +23,7 @@
                       rainbow-delimiters highlight
                       paredit smartparens
                       recentf
+                      dash-at-point
                       helm helm-ag))
 
 ;; figure out what's missing
@@ -111,6 +112,7 @@
   "s" 'helm-mini ;; switch between buffers
   "/" 'helm-find-files ;; generic file finder
   "c" 'evilnc-comment-or-uncomment-lines
+  "d" 'dash-at-point
   "g" 'magit-status)
 
 (evil-leader/set-key-for-mode 'clojure-mode "e" 'cider-eval-last-sexp)
