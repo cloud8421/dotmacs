@@ -25,6 +25,7 @@
                       paredit smartparens
                       recentf
                       dash-at-point
+                      org-journal
                       helm helm-ag))
 
 ;; figure out what's missing
@@ -114,9 +115,12 @@
   "/" 'helm-find-files ;; generic file finder
   "c" 'evilnc-comment-or-uncomment-lines
   "d" 'dash-at-point
+  "j" 'org-journal-new-entry
   "g" 'magit-status)
 
 (evil-leader/set-key-for-mode 'clojure-mode "e" 'cider-eval-last-sexp)
+
+(evil-leader/set-key-for-mode 'org-journal-mode "q" 'org-set-tags-command)
 
 (defadvice cider-last-sexp (around evil activate)
   "In normal-state or motion-state, last sexp ends at point."
@@ -194,6 +198,9 @@
              (require 'cider-test)
 
              (add-hook 'nrepl-interaction-mode-hook 'nrepl-turn-on-eldoc-mode)))
+
+;; Journal
+(setq org-journal-dir "~/Dropbox/Journal/")
 
 ;; fonts
 (defvar ui-font "Source Code Pro-12")
