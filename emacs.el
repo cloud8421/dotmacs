@@ -187,6 +187,11 @@
 (require 'elixir-mode)
 (require 'alchemist)
 
+(evil-leader/set-key-for-mode 'elixir-mode "]" 'alchemist-goto-definition-at-point)
+(evil-leader/set-key-for-mode 'elixir-mode "h" 'alchemist-help-search-at-point)
+
+(add-hook 'alchemist-help-minor-mode-hook 'turn-off-evil-mode)
+
 ;; Clojure
 (add-hook 'clojure-mode-hook
           '(lambda ()
