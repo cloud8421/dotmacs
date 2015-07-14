@@ -121,6 +121,8 @@
 (evil-leader/set-key-for-mode 'clojure-mode "e" 'cider-eval-last-sexp)
 
 (evil-leader/set-key-for-mode 'org-journal-mode "q" 'org-set-tags-command)
+(evil-leader/set-key-for-mode 'org-journal-mode "h" 'org-journal-previous-entry)
+(evil-leader/set-key-for-mode 'org-journal-mode "l" 'org-journal-next-entry)
 
 (defadvice cider-last-sexp (around evil activate)
   "In normal-state or motion-state, last sexp ends at point."
