@@ -16,6 +16,8 @@
                       js2-mode
                       elm-mode
                       markdown-mode
+                      scss-mode
+                      rainbow-mode
                       company
                       elixir-mode alchemist
                       magit
@@ -98,6 +100,8 @@
 
 ;; Soft tabs
 (setq-default indent-tabs-mode nil)
+(setq c-basic-offset 2)
+(setq css-indent-offset 2)
 
 ;; Pound sign
 (global-set-key (kbd "M-3") '(lambda()(interactive)(insert "#")))
@@ -135,6 +139,12 @@
 ;; Javascript
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js2-mode))
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
+;; CSS & SCSS
+(defun all-css-modes() (css-mode) (rainbow-mode))
+(defun all-scss-modes() (scss-mode) (rainbow-mode))
+(add-to-list 'auto-mode-alist '("\\.css$" . all-css-modes))
+(add-to-list 'auto-mode-alist '("\\.scss$" . all-scss-modes))
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
