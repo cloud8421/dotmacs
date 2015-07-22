@@ -66,6 +66,12 @@
 (global-evil-surround-mode 1)
 (global-evil-tabs-mode t)
 
+;; disable arrow keys in normal mode
+(define-key evil-motion-state-map [left] 'undefined)
+(define-key evil-motion-state-map [right] 'undefined)
+(define-key evil-motion-state-map [up] 'undefined)
+(define-key evil-motion-state-map [down] 'undefined)
+
 ;; hook helm, so that it's used everywhere
 (helm-mode t)
 (recentf-mode t)
