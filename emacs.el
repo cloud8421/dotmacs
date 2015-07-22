@@ -66,6 +66,9 @@
 (global-evil-surround-mode 1)
 (global-evil-tabs-mode t)
 
+;; space to colon
+(define-key evil-normal-state-map (kbd "<SPC>") 'evil-ex)
+
 ;; disable arrow keys in normal mode
 (define-key evil-motion-state-map [left] 'undefined)
 (define-key evil-motion-state-map [right] 'undefined)
@@ -133,6 +136,8 @@
 (evil-leader/set-key-for-mode 'org-journal-mode "q" 'org-set-tags-command)
 (evil-leader/set-key-for-mode 'org-journal-mode "h" 'org-journal-previous-entry)
 (evil-leader/set-key-for-mode 'org-journal-mode "l" 'org-journal-next-entry)
+
+(evil-ex-define-cmd "W" 'save-buffer)
 
 (defadvice cider-last-sexp (around evil activate)
   "In normal-state or motion-state, last sexp ends at point."
