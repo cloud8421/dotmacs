@@ -92,7 +92,7 @@
 (add-hook 'magit-popup-mode-hook 'turn-off-evil-mode)
 
 ;; Disable evil with sql
-(add-hook 'sql-mode 'turn-off-evil-mode)
+(add-hook 'sql-mode-hook 'turn-off-evil-mode)
 
 ;; disable backup and autosave
 (setq make-backup-files nil)
